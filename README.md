@@ -1,0 +1,1 @@
+# stitch-swagstore-export
