@@ -1,0 +1,28 @@
+{
+    "id": "5b7c4a695adebb8720b7de92",
+    "database": "users",
+    "collection": "preferences",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "user_id": "%%user.id"
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "user_id": {
+                "bsonType": "string"
+            }
+        }
+    }
+}

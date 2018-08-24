@@ -1,0 +1,10 @@
+{
+    "id": "5b59c2c7d52e9076db06b5d1",
+    "name": "aws",
+    "type": "aws",
+    "config": {
+        "accessKeyId": "AKIAJ7FT6TOEPHJDQKPQ",
+        "region": "us-east-1"
+    },
+    "version": 1
+}

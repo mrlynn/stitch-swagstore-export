@@ -1,0 +1,50 @@
+{
+    "id": "5b183ad4b8b99857310a34b9",
+    "database": "gcp",
+    "collection": "prodrec",
+    "filters": [
+        {
+            "name": "filter-0",
+            "query": {
+                "owner_id": "%%user.id"
+            },
+            "apply_when": {
+                "%%true": true
+            }
+        }
+    ],
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%true": true
+            },
+            "fields": {
+                "owner_id": {}
+            },
+            "read": true,
+            "write": true,
+            "insert": {},
+            "delete": {},
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "properties": {
+            "owner_id": {
+                "validate": {
+                    "%or": [
+                        {
+                            "%%prev": "%%user.id"
+                        },
+                        {
+                            "%%prev": {
+                                "%exists": false
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

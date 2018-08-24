@@ -1,0 +1,20 @@
+{
+    "id": "5b30ee9379e0fab036b8d73a",
+    "name": "notifyOnOrder",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "REPLACE",
+            "UPDATE"
+        ],
+        "database": "swagstore",
+        "collection": "orders",
+        "service_name": "mongodb-atlas",
+        "match": {
+            "fullDocument.status": "shipped"
+        },
+        "full_document": true
+    },
+    "function_name": "shippingEventTrigger",
+    "disabled": false
+}

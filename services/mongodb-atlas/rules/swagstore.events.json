@@ -1,0 +1,19 @@
+{
+    "id": "5b204aac058429d43fd6892a",
+    "database": "swagstore",
+    "collection": "events",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%true": true
+            },
+            "read": true,
+            "write": true,
+            "insert": {},
+            "delete": {},
+            "additional_fields": {}
+        }
+    ],
+    "schema": {}
+}

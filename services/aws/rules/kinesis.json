@@ -1,0 +1,7 @@
+{
+    "id": "5b59c5e228b2b3fc85c4350f",
+    "name": "kinesis",
+    "actions": [
+        "kinesis:*"
+    ]
+}

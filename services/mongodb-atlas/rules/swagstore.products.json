@@ -1,0 +1,39 @@
+{
+    "id": "5b0ea2a2cfb7375886b5fc02",
+    "database": "swagstore",
+    "collection": "products",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%true": true
+            },
+            "fields": {
+                "owner_id": {}
+            },
+            "read": true,
+            "write": true,
+            "insert": {},
+            "delete": {},
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "properties": {
+            "owner_id": {
+                "validate": {
+                    "%or": [
+                        {
+                            "%%prev": "%%user.id"
+                        },
+                        {
+                            "%%prev": {
+                                "%exists": false
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

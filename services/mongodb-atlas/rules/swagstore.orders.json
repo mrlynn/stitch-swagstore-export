@@ -1,0 +1,59 @@
+{
+    "id": "5b3271425fdce03e00399d99",
+    "database": "swagstore",
+    "collection": "orders",
+    "filters": [
+        {
+            "name": "User_Id_Filter",
+            "query": {
+                "user_id": "%%user.id"
+            },
+            "apply_when": {
+                "%%true": "%%true"
+            }
+        }
+    ],
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%true": true
+            },
+            "fields": {
+                "_id": {
+                    "write": true,
+                    "read": true
+                },
+                "date_created": {
+                    "write": true,
+                    "read": true
+                },
+                "products": {
+                    "write": true,
+                    "read": true
+                },
+                "status": {
+                    "write": true,
+                    "read": false
+                },
+                "total": {
+                    "write": true
+                }
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "additional_fields": {
+                "write": true,
+                "read": true
+            }
+        }
+    ],
+    "schema": {
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            }
+        }
+    }
+}

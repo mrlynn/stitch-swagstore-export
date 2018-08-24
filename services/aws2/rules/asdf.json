@@ -1,0 +1,7 @@
+{
+    "id": "5b60df535fdce028906be4d1",
+    "name": "asdf",
+    "actions": [
+        "s3:*"
+    ]
+}

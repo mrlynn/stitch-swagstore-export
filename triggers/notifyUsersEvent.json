@@ -1,0 +1,24 @@
+{
+    "id": "5b204e5446224cec9976ae7b",
+    "name": "notifyUsersEvent",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "REPLACE",
+            "UPDATE"
+        ],
+        "database": "swagstore",
+        "collection": "products",
+        "service_name": "mongodb-atlas",
+        "match": {
+            "fullDocument.inventory": {
+                "$gt": {
+                    "$numberInt": "0"
+                }
+            }
+        },
+        "full_document": true
+    },
+    "function_name": "notifyUsers",
+    "disabled": false
+}

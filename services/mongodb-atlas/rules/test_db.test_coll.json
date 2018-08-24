@@ -1,0 +1,54 @@
+{
+    "id": "5b3384215adebb2c8733dc7d",
+    "database": "test_db",
+    "collection": "test_coll",
+    "filters": [
+        {
+            "name": "filter 1",
+            "query": {},
+            "apply_when": {}
+        }
+    ],
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "userId": "%%user.id"
+            },
+            "fields": {
+                "Field1": {}
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "non-owner",
+            "apply_when": {},
+            "fields": {
+                "Field1": {
+                    "write": false,
+                    "read": true
+                }
+            },
+            "read": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "userId": {
+                "bsonType": "string"
+            }
+        }
+    }
+}
